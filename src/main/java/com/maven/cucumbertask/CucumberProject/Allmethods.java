@@ -301,21 +301,16 @@ public class Allmethods {
 		ac.click(element).build().perform();
 	}
 
-	public static void takeScreenShot(String filename) throws IOException {
+	public static File takeScreenShot(String filename) throws IOException {
 
-		try {
 			TakesScreenshot ts = (TakesScreenshot) driver;
 			File temp = ts.getScreenshotAs(OutputType.FILE);
 			File des = new File("D:\\JavaClass\\CucumberProject\\Projectscreenshot" + filename + ".png");
 			FileUtils.copyFile(temp, des);
-		} catch (WebDriverException e) {
-
-			e.printStackTrace();
-		}
-
+			return des;
+		
 	}
-
-	public static void switchToWindows(String pageTitle) {
+	public static void switchToWindowsTitle(String pageTitle) {
 		Set<String> windowHandles = driver.getWindowHandles();
 		for (String x : windowHandles) {
 			driver.switchTo().window(x);
@@ -329,7 +324,7 @@ public class Allmethods {
 
 	}
 
-	public static void switchToWindows(int index) throws Exception {
+	public static void switchToWindowsIndex(int index) throws Exception {
 		try {
 			Set<String> windowHandles = driver.getWindowHandles();
 			List<String> li = new ArrayList<String>();

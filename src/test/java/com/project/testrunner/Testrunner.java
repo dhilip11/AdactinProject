@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(plugin= {
 		"com.cucumber.listener.ExtentCucumberFormatter:src\\test\\resources\\com\\cucumber\\reports\\ExtentReport\\extent.html"},
 		features = "src\\test\\java\\com\\project\\feature", 
-glue = "com.project.stepdefinition"
+glue = "com.project.stepdefinition",tags= {"@TC101"}
 )
 		
 
@@ -25,20 +25,20 @@ public class Testrunner extends Allmethods {
 
 	@BeforeClass
 	public static void driverLaunch() throws Throwable {
-		//ConfigReader cr=new ConfigReader();
+		ConfigReader cr=new ConfigReader();
 		System.out.println("driver launching");
-		Allmethods.getBrowser("chrome");
-		//getBrowser(cr.gettingBrowserName());
+		//Allmethods.getBrowser("chrome");
+		getBrowser(cr.gettingBrowserName());
 		
 		
-		Allmethods.getUrl("https://adactin.com/HotelApp/index.php");
-		//getUrl(cr.gettingUrl());
+		//Allmethods.getUrl("https://adactin.com/HotelApp/index.php");
+		getUrl(cr.gettingUrl());
 	}
 
 	@AfterClass
 	public static void driverQuit() {
 		driver.quit();
-		Reporter.loadXMLConfig(new File(System.getProperty("user.dir")+"\\src\\test\\resources\\com\\cucumber\\prop\\entent.xml"));
+		Reporter.loadXMLConfig(new File(System.getProperty("user.dir")+ "\\src\\test\\resources\\com\\cucumber\\prop\\extent-config.xml"));
 		System.out.println("Driver Quit");
 
 	}

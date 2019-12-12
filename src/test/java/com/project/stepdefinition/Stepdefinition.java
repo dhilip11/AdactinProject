@@ -41,7 +41,7 @@ public class Stepdefinition  extends Allmethods{
 	@When("^User Select location as in test data$")
 	public void user_Select_location_as_in_test_data() throws Throwable {
 	    //SearchHotelPage sp = new SearchHotelPage(driver);
-	    selectOptionInDD(ph.getShp().getLocation(), "visibletext", "Sydney");
+	    selectOptionInDD(ph.getShp().getLocation(), "index", "1");
 	    
 	}
 

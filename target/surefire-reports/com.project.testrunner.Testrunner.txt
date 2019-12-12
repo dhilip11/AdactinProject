@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.project.testrunner.Testrunner
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 24.692 s <<< FAILURE! - in com.project.testrunner.Testrunner
+com.project.testrunner.Testrunner  Time elapsed: 0.741 s  <<< ERROR!
+java.lang.IllegalArgumentException: InputStream cannot be null
+	at com.project.testrunner.Testrunner.driverQuit(Testrunner.java:41)
+
